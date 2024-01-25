@@ -60,3 +60,10 @@ anotherValue = (param:any)=> {
   console.log(param);
 }
 
+
+const sum = (a:number, b:number, c?:number|string) => a+b; //c is optional its default value is 0
+
+const summation = (a:number, b:number, c:number = 10) => a+b+c;
+
+let result = sum(10,20);
+let sumResult = summation(11,31);
