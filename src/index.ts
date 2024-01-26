@@ -1,33 +1,14 @@
-// function sigantures
+const h1 = document.querySelector('h1')!;  // have to use the ! mark to tell ts that i know that it exits
+// or
+// if(h1) {
+//   h1.innerText = 'khankir pola kuttar bacca';
+// }
 
 
-// returns void
+h1.innerText = 'manger nati kuttar bacca';
 
-let greet : (name:string , id:number) => void; // have to use let
+// when selecting an element by a class or id ts doesnt know what type is the element ... so we have to type cast to let ts to know that its a html element
 
-greet = (name:string, id:number) => {
-  console.log(`${name}'s id is ${id}`);
-}
+const header = document.querySelector('.header') as HTMLHeadingElement; // type casting
 
-// returns number
-
-let calc : (a:number, b:number, c:string) => number;
-calc = (a:number, b:number, c:string) => {
-  if(c =='add') {
-    return a+b;
-  }
-  else {
-    return a-b; //it has to return a number
-  }
-}
-
-// fun signature using type alias
-
-let greeting : (obj: {name:string, id:string|number}) => void;
-
-type objname = {name:string, id: string|number};
-
-greeting = (obj:objname) => {
-  let {name, id} = obj;
-  console.log(`you are ${name}. Your id is ${id}`);
-}
+header.innerText = 'khankir pola manger beta';
