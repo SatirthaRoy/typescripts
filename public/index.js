@@ -1,11 +1,23 @@
 "use strict";
-// type aliases
-// a function
-const greeting = (name, id) => {
-    console.log(`hellow ${name}.. your id is ${id}`);
+// function sigantures
+// returns void
+let greet; // have to use let
+greet = (name, id) => {
+    console.log(`${name}'s id is ${id}`);
 };
-const greet = (info) => {
-    const { name, uid } = info; // destucturing obj
-    console.log(`hellow ${name}. your id ${uid}`);
+// returns number
+let calc;
+calc = (a, b, c) => {
+    if (c == 'add') {
+        return a + b;
+    }
+    else {
+        return a - b; //it has to return a number
+    }
 };
-greet({ name: 'satirtha', uid: 1234 });
+// fun signature using type alias
+let greeting;
+greeting = (obj) => {
+    let { name, id } = obj;
+    console.log(`you are ${name}. Your id is ${id}`);
+};

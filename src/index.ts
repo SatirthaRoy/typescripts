@@ -1,17 +1,33 @@
-// type aliases
+// function sigantures
 
-type strOrnum = string | number; //by type aliases we can declare our own custom types and what the type shall include
-type objName = {name: string, uid: strOrnum};
 
-// a function
+// returns void
 
-const greeting = (name: string, id: string|number) => { // we can use type aliases if we use the same type multiple times
-  console.log(`hellow ${name}.. your id is ${id}`);
+let greet : (name:string , id:number) => void; // have to use let
+
+greet = (name:string, id:number) => {
+  console.log(`${name}'s id is ${id}`);
 }
 
-const greet = (info: objName) => {
-  const {name,uid} = info; // destucturing obj
-  console.log(`hellow ${name}. your id ${uid}`);
+// returns number
+
+let calc : (a:number, b:number, c:string) => number;
+calc = (a:number, b:number, c:string) => {
+  if(c =='add') {
+    return a+b;
+  }
+  else {
+    return a-b; //it has to return a number
+  }
 }
 
-greet({name: 'satirtha', uid: 1234});
+// fun signature using type alias
+
+let greeting : (obj: {name:string, id:string|number}) => void;
+
+type objname = {name:string, id: string|number};
+
+greeting = (obj:objname) => {
+  let {name, id} = obj;
+  console.log(`you are ${name}. Your id is ${id}`);
+}
